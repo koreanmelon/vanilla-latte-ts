@@ -17,7 +17,12 @@ function assertEquals(expected, actual, message, tolerance) {
         if (tolerance == undefined) {
             throw new Error("Must specify a tolerance when comparing two numbers.");
         }
-        return expected > actual + tolerance || expected < actual - tolerance;
+        if (expected >= actual + tolerance || expected <= actual - tolerance) {
+            return true;
+        }
+        else {
+            throw new Error(message + `\n    expected: ${expected}\n    actual: ${actual}\n`);
+        }
     }
     else {
         return expected == actual;
