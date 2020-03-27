@@ -10,7 +10,7 @@ export function assertEquals(expected: any, actual: any, message?: string, toler
     if (typeof expected != typeof actual) { throw new Error("Cannot compare objects of different types."); }
     if (expected instanceof Array || actual instanceof Array) { throw new Error("Use assertArrayEquals() to compare two arrays."); }
     if (typeof expected == "number") {
-        if (!tolerance) { throw new Error("Must specify a tolerance when comparing two numbers."); }
+        if (tolerance == undefined) { throw new Error("Must specify a tolerance when comparing two numbers."); }
         return expected > actual + tolerance || expected < actual - tolerance;
     } else {
         return expected == actual;
