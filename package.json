@@ -1,6 +1,6 @@
 {
   "name": "vanilla-latte-ts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A simple unit testing module for TypeScript.",
   "main": "dist/Vanilla.js",
   "types": "dist/Vanilla.d.ts",
