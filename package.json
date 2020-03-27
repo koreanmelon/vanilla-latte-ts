@@ -1,0 +1,12 @@
+{
+  "name": "vanilla-latte-ts",
+  "version": "1.0.0",
+  "description": "A simple unit testing module for TypeScript.",
+  "main": "dist/Main.js",
+  "types": "dist/Main.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "koreanmelon <peterkim426@gmail.com>",
+  "license": "ISC"
+}
