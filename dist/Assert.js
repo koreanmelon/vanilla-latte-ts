@@ -14,7 +14,7 @@ function assertEquals(expected, actual, message, tolerance) {
         throw new Error("Use assertArrayEquals() to compare two arrays.");
     }
     if (typeof expected == "number") {
-        if (!tolerance) {
+        if (tolerance == undefined) {
             throw new Error("Must specify a tolerance when comparing two numbers.");
         }
         return expected > actual + tolerance || expected < actual - tolerance;
