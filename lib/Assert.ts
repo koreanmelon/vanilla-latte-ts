@@ -11,7 +11,11 @@ export function assertEquals(expected: any, actual: any, message?: string, toler
     if (expected instanceof Array || actual instanceof Array) { throw new Error("Use assertArrayEquals() to compare two arrays."); }
     if (typeof expected == "number") {
         if (tolerance == undefined) { throw new Error("Must specify a tolerance when comparing two numbers."); }
-        return expected > actual + tolerance || expected < actual - tolerance;
+        if (expected >= actual + tolerance || expected <= actual - tolerance) {
+            return true;
+        } else {
+            throw new Error(message + `\n    expected: ${expected}\n    actual: ${actual}\n`);
+        }
     } else {
         return expected == actual;
     }
